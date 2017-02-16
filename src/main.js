@@ -1,4 +1,6 @@
-import "./assets/style.css";
-import x from'./sec.js';
+var $ = require("jquery");
+import './assets/style.scss';
 
-document.write(x);
+$("#main").html('hello world');
+
+
