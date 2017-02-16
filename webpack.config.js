@@ -11,6 +11,9 @@ module.exports = {
         jquery:"jQuery"
     },
     devtool: "source-map",
+    resolve: {
+        extensions: ['.js', '.jsx','.css','.scss']
+    },
     module:{
         loaders:[
             {test: /\.js$/, loaders: [ "babel-loader"], exclude: /node_modules/},
