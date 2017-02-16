@@ -1,4 +1,4 @@
-function say(){
-    console.log("Hello World");
-}
-say();
+import "./assets/style.css";
+import x from'./sec.js';
+
+document.write(x);

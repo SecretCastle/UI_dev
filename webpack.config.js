@@ -8,20 +8,25 @@ module.exports = {
     },
     module:{
         loaders:[
+            {test: /\.js$/, loaders: [ "babel-loader", "eslint-loader" ], exclude: /node_modules/},
+        ],
+        rules:[
+            
             {
-                test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
-                loader: 'babel-loader',
-                query: {
-                    presets: ['es2015','stage-3'],
-                    plugins: ['transform-runtime']
-                }
-            },
-            {
-                test:/\.css$/,
-                exclude: /(node_modules|bower_components)/,
-                loader:'css-loader!style-loader'
+                test: /\.css$/, 
+                exclude: /node_modules/,
+                use:[
+                    {
+                        loader : 'style-loader'
+                    },
+                    {
+                        loader : 'css-loader'
+                    }
+                ]
             }
         ]
     }
+    // eslint:{
+    //     configFile : './.eslintrc'
+    // }
 }
