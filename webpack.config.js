@@ -26,7 +26,4 @@ module.exports = {
             }
         ]
     }
-    // eslint:{
-    //     configFile : './.eslintrc'
-    // }
 }
