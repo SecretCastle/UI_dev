@@ -1,5 +1,11 @@
-{
-    "rules": {
-        
+{   
+    "parserOptions": {        //语言选项
+        "ecmaVersion":6,
+        "sourceType": "script"
+    },
+    "parser": "babel-eslint",  //解析器
+    "env": {
+        "browser": true,
+        "node": true
     }
 }
