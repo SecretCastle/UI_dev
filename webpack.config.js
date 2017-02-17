@@ -16,25 +16,44 @@ module.exports = {
     },
     module:{
         loaders:[
-            {test: /\.js$/, loaders: ["babel-loader","eslint-loader"], exclude: /node_modules/},
+            {
+                test: /\.js$/, 
+                loaders: ["babel-loader"], 
+                exclude: /node_modules/
+            }
         ],
         rules:[
-            
             {
-                test: /\.scss$/, 
-                exclude: /node_modules/,
-                use:[{
-                    loader: "style-loader" // creates style nodes from JS strings
+                test: /\.scss$/,
+                use: [{
+
+                    loader: "style-loader"
+
                 }, {
-                    loader: "css-loader", options: {
+                    loader: "css-loader", 
+                    options: {
                         sourceMap: true
                     }
                 }, {
-                    loader: "sass-loader", options: {
+                    loader: "sass-loader", 
+                    options: {
                         sourceMap: true,
                         includePaths: ["node_modules"]
                     }
                 }]
+            },
+            {
+                enforce: 'pre',
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: [{
+                    loader: 'eslint-loader', 
+                    options: {
+                        rules: {
+                            "semi": 0
+                        }
+                    }
+                }],
             }
         ]
     }

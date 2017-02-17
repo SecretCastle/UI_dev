@@ -9,8 +9,7 @@
         "node": true
     },
     "rules": {
-
-        "no-console":0
-
+        "no-console":["error", { allow: ["warn", "error"] }],
+        "max-len": [1, 120, 2, {ignoreComments: true}],
     }
 }
