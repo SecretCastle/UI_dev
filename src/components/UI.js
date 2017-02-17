@@ -1,28 +1,31 @@
-export default class UI{
-    constructor(name,options){
-        this.name = name;
+var $ = require('jquery');
+
+export default class UI {
+    constructor(options) {
         this.options = options;
     }
-    show(){
-        console.log("this is show");
+    show() {
+        $(this.options.hook).show();
     };
-    hide(){
-        console.log("this is hide");
+    hide() {
+        $(this.options.hook).hide();
     };
-    enable(){
+    enable() {
 
     };
-    disabled(){
+    disabled() {
 
     };
-    get isEnabled(){
-      
+    get isEnabled() {
+
     };
-    get isDisabled(){
+    get isDisabled() {
 
     };
     get dom(){
-
+        return $(this.options.hook);
     };
-
+    get getself(){
+        return this;
+    };
 }
