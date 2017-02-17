@@ -1,6 +1,9 @@
-import "./assets/style.css";
-import x from'./sec.js';
+var $ = require("jquery");
+import './assets/style';
 
-document.write(x);
 
-console.log("hi");
+$("#main").html('hello world');
+
+
+console.log('hi');
+
