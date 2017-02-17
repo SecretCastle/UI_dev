@@ -48,11 +48,9 @@ module.exports = {
                 exclude: /node_modules/,
                 use: [{
                     loader: 'eslint-loader', 
-                    options: {
-                        rules: {
-                            "semi": 0
-                        }
-                    }
+                    query: {
+                        configFile: './.eslintrc'
+                    },
                 }],
             }
         ]
