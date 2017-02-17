@@ -1,4 +1,10 @@
 var $ = require("jquery");
 import './assets/style';
+import JD from './core';
 
-console.log('hi');
+var listitem = new JD.ListItem("name",{
+    title : "title"
+});
+
+
+listitem.show();
