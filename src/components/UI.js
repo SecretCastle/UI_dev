@@ -3,6 +3,14 @@ var $ = require('jquery');
 export default class UI {
     constructor(options) {
         this.options = options;
+        this.create();
+        this.initEventFn();
+    }
+    create(){
+        this.initEventFn();
+    }
+    initEventFn(){
+        
     }
     show() {
         $(this.options.hook).show();
