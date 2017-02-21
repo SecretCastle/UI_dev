@@ -33,7 +33,12 @@ export default class UI {
     get dom(){
         return $(this.options.hook);
     };
+
     get getself(){
         return this;
     };
+
+    set setValue(val){
+        
+    }
 }

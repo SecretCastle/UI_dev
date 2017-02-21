@@ -53,5 +53,4 @@ var listitem = new JD.UI.ListItem({
     }
 });
 
-console.log(listitem.value);
-
+listitem.setValue = '5';

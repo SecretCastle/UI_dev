@@ -15,9 +15,11 @@ var $ = require("jquery");
  *     
  */
 class ListItem extends UI{
+
     constructor(options){
         super(options);
     }
+
     create(){
         let html = "";
         let _map = this.options.map;
@@ -36,13 +38,18 @@ class ListItem extends UI{
             if(_map[i].value === this.value){
                 html += 
                 `<div class="unit-1-`+_gridNum+` site-box text-center list-item on" 
-                                                    data-mode-index = "`+_map[i].value+`">
+                                                    data-mode-index = "`+_map[i].value+`"
+                                                    value = "`+_map[i].value+`"
+                                                    >
                     <span class="iconfont">`+_map[i].icon+`</span>
                     <span class="mode_name">`+_map[i].text+`</span>
                 </div>`;    
             }else{
                 html += 
-                `<div class="unit-1-`+_gridNum+` site-box text-center list-item" data-mode-index = "`+_map[i].value+`">
+                `<div class="unit-1-`+_gridNum+` site-box text-center list-item" 
+                                                    data-mode-index = "`+_map[i].value+`"
+                                                    value = "`+_map[i].value+`"
+                                                    >
                     <span class="iconfont">`+_map[i].icon+`</span>
                     <span class="mode_name">`+_map[i].text+`</span>
                 </div>`;     
@@ -51,6 +58,7 @@ class ListItem extends UI{
         }
         $(_hook).append(html);
     }
+
     initEventFn(){
         let selector = this.selectorDom();
         $(document).on("click",selector,(e)=>{
@@ -71,9 +79,44 @@ class ListItem extends UI{
     selected(index,dom){
         let selector = this.selectorDom();
         $(selector).removeClass("on");
-        $(dom).addClass("on");
+        if(dom){
+            $(dom).addClass("on");
+        }else{
+            let selectedItem = `${this.selectorDom()}[value=${index}]`;
+            $(selectedItem).addClass("on");
+        }
     }
     
+    set setValue(val){
+        this.setValueFn(val);
+    }
+
+    setValueFn(val){
+        let _map = this.options.map;
+        let check = this.checkVal(val,_map);
+        
+        if(check){
+            for(let i in _map){
+                if(_map[i].value === val){
+                    this.value = val;
+                    this.selected(i);
+                }
+            }
+        }else{
+            throw "error";
+        }
+    }
+
+    checkVal(val,_map){
+        let a = false;
+        for(let i of _map){
+            if(i["value"] === val){
+                a = true;
+                break;
+            }
+        }
+        return a;
+    }
 
 };
 
