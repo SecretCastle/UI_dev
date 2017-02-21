@@ -1,11 +1,11 @@
-import ListItem from './components/ListItem';
+import GridItem from './components/GridItem';
 
 /**
  * 
  */
 const JD = {
     UI:{
-        ListItem : ListItem
+        GridItem : GridItem
     },
     TOOLS:{
 

@@ -2,11 +2,11 @@ var $ = require("jquery");
 import './assets/style';
 import JD from './core';
 
-var listitem = new JD.UI.ListItem({
+var griditem = new JD.UI.GridItem({
     title: "模式选择",
-    hook: ".list-item-wrap",
+    hook: ".grid-item-wrap",
     gridNum:'4',
-    value:'2',
+    value:'0',
     map: [{
         icon: "&#xe681;",
         text: "模式1",
@@ -48,9 +48,13 @@ var listitem = new JD.UI.ListItem({
         text: "模式8",
         value: "9"
     }],
-    change:(item,index,content) => {
+    beforeTap:()=>{
+        console.log("before");
+    },
+    onTap:(item,index,content) => {
         console.log(`下发的值:${index}`)
+    },
+    afterTap:()=>{
+        console.log("after");
     }
 });
-
-listitem.setValue = '5';
