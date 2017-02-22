@@ -37,21 +37,21 @@ class GridItem extends UI{
         for(let i in _map){
             if(_map[i].value === this.value){
                 html += 
-                `<div class="unit-1-`+_gridNum+` site-box text-center list-item on" 
-                                                    data-mode-index = "`+_map[i].value+`"
-                                                    value = "`+_map[i].value+`"
+                `<div class="unit-1-${_gridNum} site-box text-center list-item on" 
+                                                    data-mode-index = "${_map[i].value}"
+                                                    value = "${_map[i].value}"
                                                     >
-                    <span class="iconfont">`+_map[i].icon+`</span>
-                    <span class="mode_name">`+_map[i].text+`</span>
+                    <span class="iconfont">${_map[i].icon}</span>
+                    <span class="mode_name">${_map[i].text}</span>
                 </div>`;    
             }else{
                 html += 
-                `<div class="unit-1-`+_gridNum+` site-box text-center list-item" 
-                                                    data-mode-index = "`+_map[i].value+`"
-                                                    value = "`+_map[i].value+`"
+                `<div class="unit-1-${_gridNum} site-box text-center list-item" 
+                                                    data-mode-index = "${_map[i].value}"
+                                                    value = "${_map[i].value}"
                                                     >
-                    <span class="iconfont">`+_map[i].icon+`</span>
-                    <span class="mode_name">`+_map[i].text+`</span>
+                    <span class="iconfont">${_map[i].icon}</span>
+                    <span class="mode_name">${_map[i].text}</span>
                 </div>`;     
             }
             

@@ -7,7 +7,7 @@ export default class UI {
         this.initEventFn();
     }
     create(){
-        this.initEventFn();
+        
     }
     initEventFn(){
         

@@ -48,19 +48,24 @@ div[class~="unit-0"]{
 }
 div[class~="unit-0"] .title{
     width: 65%;
-    line-height: 40px;
+    line-height: 30px;
     padding-left: 10px;
 }
 div[class~="unit-0"] .title .maint{
     font-size: 16px;
     line-height: 30px;
+    display: block
+}
+div[class~="unit-0"] .title .maint_nosub{
     display: block;
+    line-height: 40px;
 }
 div[class~="unit-0"] .title .sub{
     font-size: 12px;
     line-height: 12px;
     display: block;
 }
+
 div[class~="unit-0"] .rightPart{
     width:25%;
     font-size: 16px;

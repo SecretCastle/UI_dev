@@ -58,3 +58,32 @@ var griditem = new JD.UI.GridItem({
         console.log("after");
     }
 });
+
+
+var listitem = new JD.UI.ListeItem({
+    title:"列表",
+    hook:".list-item-wrap",
+    map:[
+        {
+            icon:"&#xe685;",
+            title:"Hello World",
+            subTitle:'',
+            rightTitle:""
+        },
+        {
+            icon:"&#xe685;",
+            title:"Hello World2",
+            subTitle:'',
+            rightTitle:""
+        }
+    ],
+    beforeTap:function(){
+
+    },
+    onTap:function(item,context){
+        console.log(item,context);
+    },
+    afterTap:function(){
+
+    }
+});
